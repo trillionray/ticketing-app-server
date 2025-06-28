@@ -5,7 +5,7 @@ const auth = require("../auth");
 const { verify, verifyAdmin } = auth;
 
 router.post('/', verify, verifyAdmin, ticketController.submitTicket);
-router.get('/', verify, verifyAdmin, ticketController.getAllTickets);
+router.get('/', ticketController.getAllTickets);
 router.patch('/:ticketId/status', verify, verifyAdmin, ticketController.updateTicketStatus);
 router.delete('/:ticketId', verify, verifyAdmin, ticketController.deleteTicket);
 
